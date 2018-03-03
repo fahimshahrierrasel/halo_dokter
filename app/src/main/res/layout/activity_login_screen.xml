@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_login"
+    android:background="#326288"
+    tools:context="com.halodokter.andromeda.halodokter.LoginScreen">
+
+    <LinearLayout
+        android:id="@+id/logo_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView_chef"
+            android:layout_width="150sp"
+            android:layout_height="120sp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/logo_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/input_layout"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="Phone No"
+            android:textColor="#666666"
+            android:textCursorDrawable="@null" />
+
+        <requestFocus />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/input_layout"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="Password"
+            android:textColor="#666666"
+            android:textCursorDrawable="@null" />
+
+        <requestFocus />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F8981D"
+            android:text="Login"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_margin="20dp"/>
+    </LinearLayout>
+</RelativeLayout>
