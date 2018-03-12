@@ -18,14 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".WelcomeActivity" />
         <activity
             android:name=".LoginScreen"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden" />
+        <activity android:name=".UserRegistration"></activity>
     </application>
 
 </manifest>

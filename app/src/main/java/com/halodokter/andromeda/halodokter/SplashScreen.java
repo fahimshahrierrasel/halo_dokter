@@ -33,7 +33,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run(){
                 try{
                     sleep(3000);
-                    startActivity(new Intent(getApplicationContext(),LoginScreen.class));
+                    startActivity(new Intent(getApplicationContext(),WelcomeActivity.class));
                     finish();
                 }catch (InterruptedException e){
                     e.printStackTrace();
