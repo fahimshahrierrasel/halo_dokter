@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:facebook="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -25,7 +23,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/generalinput"
+        android:id="@+id/socialLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo_name"
@@ -39,11 +37,11 @@
             android:drawableLeft="@drawable/ic_user24dp"
             android:drawablePadding="16dp"
             android:hint="User Name"
-            android:textColorHint="#dddddd"
             android:maxLength="20"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="#666666"
+            android:textColorHint="#dddddd"
             android:textCursorDrawable="@null" />
 
         <requestFocus />
@@ -53,14 +51,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Password"
             android:drawableLeft="@drawable/ic_passwordlock24dp"
             android:drawablePadding="16dp"
-            android:textColorHint="#dddddd"
+            android:hint="Password"
             android:maxLength="35"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="#666666"
+            android:textColorHint="#dddddd"
             android:textCursorDrawable="@null" />
 
         <requestFocus />
@@ -69,43 +67,47 @@
             android:id="@+id/loginbtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:background="#f64c73"
             android:padding="10dp"
             android:text="Login"
             android:textColor="#ffffff"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <Button
-            android:onClick="sendMessage"
             android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:background="#3395ff"
+            android:onClick="sendMessage"
             android:padding="10dp"
             android:text="Register"
             android:textColor="#ffffff"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_below="@+id/generalinput"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/socialLogin"
+        android:orientation="vertical">
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/btnFacebookLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"/>
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/btnFacebookLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"/>
 
     </LinearLayout>
 
