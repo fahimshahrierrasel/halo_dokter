@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.halodokter.andromeda.halodokter">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -26,6 +28,12 @@
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden" />
         <activity android:name=".UserRegistration"></activity>
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>
