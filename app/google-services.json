@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "787302271097-jbmnmmtloc79urtt894ptghnt4ltnu1v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.halodokter.andromeda.halodokter",
+            "certificate_hash": "572f59b31aff658777cecad7014da76038a56429"
+          }
+        },
+        {
           "client_id": "787302271097-9lckb1icchcm70a9kfde2iev65jhrtp0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
