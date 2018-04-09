@@ -19,10 +19,13 @@
     <string name="slide_3_desc">Get medicines delivered to your doorstep.</string>
 
     <string name="slide_4_title">Medical History</string>
-    <string name="slide_4_desc">Keep yout medical history handy.</string>
+    <string name="slide_4_desc">Keep your medical history handy.</string>
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+
+    <string name="heading">Book an appointment</string>
+    <string name="paragraph">Find doctors clinics,hospitals, and more</string>
 
     <string-array name="gender_array">
         <item>Male</item>

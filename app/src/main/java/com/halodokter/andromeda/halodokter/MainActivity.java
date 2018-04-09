@@ -5,7 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
@@ -15,12 +18,41 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private  FirebaseAuth.AuthStateListener mAuthListener;
     private Button btnLogout;
+    ListView list;
+    String[] itemname ={
+            "Book an appointment",
+            "Book an appointment"
+    };
+    Integer[] imgid={
+            R.drawable.ic_search24dp,
+            R.drawable.ic_search24dp,
+    };
+    Integer[] iconid={
+            R.drawable.ic_arrow_right24dp,
+            R.drawable.ic_arrow_right24dp,
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_main);
+
+        CustomListAdapter adapter=new CustomListAdapter(this, itemname, imgid,iconid);
+        list=(ListView)findViewById(R.id.mainlist);
+        list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                // TODO Auto-generated method stub
+                String Slecteditem= itemname[+position];
+                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         btnLogout = findViewById(R.id.btnLogout);
 
