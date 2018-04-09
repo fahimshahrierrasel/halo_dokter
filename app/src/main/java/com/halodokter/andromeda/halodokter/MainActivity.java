@@ -2,6 +2,7 @@ package com.halodokter.andromeda.halodokter;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -17,7 +18,7 @@ import com.halodokter.andromeda.halodokter.fragments.HomeFragment;
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    HomeFragment currentFragment;
+    Fragment currentFragment;
     ViewPagerAdapter viewPagerAdapter;
 
     AHBottomNavigation bottomNavigation;
@@ -67,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
                     currentFragment = viewPagerAdapter.getCurrentFragment();
                 }
 
-                if (wasSelected) {
-                    currentFragment.refresh();
-                    return true;
-                }
+//                if (wasSelected) {
+//                    currentFragment.refresh();
+//                    return true;
+//                }
 
 //                if (currentFragment != null) {
 //                    currentFragment.willBeHidden();
@@ -84,23 +85,23 @@ public class MainActivity extends AppCompatActivity {
 
                 currentFragment = viewPagerAdapter.getCurrentFragment();
                 //currentFragment.willBeDisplayed();
-                switch (position)
-                {
-                    case 0:
-                        if(getSupportActionBar() != null)
-                            getSupportActionBar().setTitle("Home");
-                        break;
-                    case 1:
-                        if(getSupportActionBar() != null)
-                            getSupportActionBar().setTitle("Your List");
-                        break;
-                    case 2:
-                        if(getSupportActionBar() != null)
-                            getSupportActionBar().setTitle(mAuth.getCurrentUser().getDisplayName());
-                        break;
-                    default:
-                        break;
-                }
+//                switch (position)
+//                {
+//                    case 0:
+//                        if(getSupportActionBar() != null)
+//                            getSupportActionBar().setTitle("Home");
+//                        break;
+//                    case 1:
+//                        if(getSupportActionBar() != null)
+//                            getSupportActionBar().setTitle("Your List");
+//                        break;
+//                    case 2:
+//                        if(getSupportActionBar() != null)
+//                            getSupportActionBar().setTitle(mAuth.getCurrentUser().getDisplayName());
+//                        break;
+//                    default:
+//                        break;
+//                }
                 return true;
             }
         });

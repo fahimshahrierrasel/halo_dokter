@@ -6,11 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:fitsSystemWindows="true"
     tools:context="com.halodokter.andromeda.halodokter.MainActivity">
 
     <com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
         android:layout_height="match_parent"/>
 
     <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
