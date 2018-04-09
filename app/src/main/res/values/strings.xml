@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HaloDokter</string>
+    <string name="app_name">Halo Dokter</string>
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
@@ -26,6 +26,9 @@
 
     <string name="heading">Book an appointment</string>
     <string name="paragraph">Find doctors clinics,hospitals, and more</string>
+    <string name="home">Home</string>
+    <string name="list">YOUR LIST</string>
+    <string name="profile">PROFILE</string>
 
     <string-array name="gender_array">
         <item>Male</item>
