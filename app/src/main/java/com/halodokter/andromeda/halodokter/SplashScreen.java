@@ -10,7 +10,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 public class SplashScreen extends AppCompatActivity {
-
+    PrefManager prefManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +29,19 @@ public class SplashScreen extends AppCompatActivity {
         animationchef.setFillAfter(true);
         imageViewChef.startAnimation(animationchef);  // start animation
 
+        prefManager = new PrefManager(SplashScreen.this);
+
         Thread timer = new Thread(){
             public void run(){
                 try{
                     sleep(3000);
-                    startActivity(new Intent(getApplicationContext(),WelcomeActivity.class));
+                    Intent intent;
+                    if(prefManager.isLoggedIn()) {
+                        intent = new Intent(getApplicationContext(), MainActivity.class);
+                    }else{
+                        intent = new Intent(getApplicationContext(),WelcomeActivity.class);
+                    }
+                    startActivity(intent);
                     finish();
                 }catch (InterruptedException e){
                     e.printStackTrace();
