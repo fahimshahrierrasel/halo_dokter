@@ -2,35 +2,28 @@ package com.halodokter.andromeda.halodokter;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.facebook.login.LoginManager;
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.halodokter.andromeda.halodokter.adapters.ViewPagerAdapter;
+import com.halodokter.andromeda.halodokter.fragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private  FirebaseAuth.AuthStateListener mAuthListener;
-    private Button btnLogout;
-    ListView list;
-    String[] itemname ={
-            "Book an appointment",
-            "Book an appointment"
-    };
-    Integer[] imgid={
-            R.drawable.ic_search24dp,
-            R.drawable.ic_search24dp,
-    };
-    Integer[] iconid={
-            R.drawable.ic_arrow_right24dp,
-            R.drawable.ic_arrow_right24dp,
-    };
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    Fragment currentFragment;
+    ViewPagerAdapter viewPagerAdapter;
+
+    AHBottomNavigation bottomNavigation;
+    AHBottomNavigationViewPager bottomNavigationViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,47 +31,87 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_main);
 
-        CustomListAdapter adapter=new CustomListAdapter(this, itemname, imgid,iconid);
-        list=(ListView)findViewById(R.id.mainlist);
-        list.setAdapter(adapter);
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                // TODO Auto-generated method stub
-                String Slecteditem= itemname[+position];
-                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        btnLogout = findViewById(R.id.btnLogout);
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user= mAuth.getCurrentUser();
-                if(user == null)
-                {
-                    startActivity(new Intent(MainActivity.this,LoginScreen.class));
-                }else {
-                    String buttonText = "Logout " + user.getDisplayName();
-                    btnLogout.setText(buttonText);
+                FirebaseUser user = mAuth.getCurrentUser();
+                if (user == null) {
+                    startActivity(new Intent(MainActivity.this, LoginScreen.class));
                 }
             }
         };
 
-        btnLogout.setOnClickListener(new View.OnClickListener() {
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+        bottomNavigationViewPager = findViewById(R.id.view_pager);
+
+
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        bottomNavigationViewPager.setAdapter(viewPagerAdapter);
+        currentFragment = viewPagerAdapter.getCurrentFragment();
+
+
+        bottomNavigation.setColored(true);
+        bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
+        // Create items
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.home, R.drawable.ic_home_24dp, R.color.colorPrimary);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.list, R.drawable.ic_list_24dp, R.color.colorPrimary);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.profile, R.drawable.ic_person_24dp, R.color.colorPrimary);
+        // Add items
+        bottomNavigation.addItem(item1);
+        bottomNavigation.addItem(item2);
+        bottomNavigation.addItem(item3);
+        // Set listeners
+        bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-                LoginManager.getInstance().logOut();
-                startActivity(new Intent(MainActivity.this,LoginScreen.class));
+            public boolean onTabSelected(int position, boolean wasSelected) {
+                if (currentFragment == null) {
+                    currentFragment = viewPagerAdapter.getCurrentFragment();
+                }
+
+//                if (wasSelected) {
+//                    currentFragment.refresh();
+//                    return true;
+//                }
+
+//                if (currentFragment != null) {
+//                    currentFragment.willBeHidden();
+//                }
+
+                bottomNavigationViewPager.setCurrentItem(position, false);
+
+                if (currentFragment == null) {
+                    return true;
+                }
+
+                currentFragment = viewPagerAdapter.getCurrentFragment();
+                //currentFragment.willBeDisplayed();
+//                switch (position)
+//                {
+//                    case 0:
+//                        if(getSupportActionBar() != null)
+//                            getSupportActionBar().setTitle("Home");
+//                        break;
+//                    case 1:
+//                        if(getSupportActionBar() != null)
+//                            getSupportActionBar().setTitle("Your List");
+//                        break;
+//                    case 2:
+//                        if(getSupportActionBar() != null)
+//                            getSupportActionBar().setTitle(mAuth.getCurrentUser().getDisplayName());
+//                        break;
+//                    default:
+//                        break;
+//                }
+                return true;
             }
         });
+        bottomNavigation.setOnNavigationPositionListener(new AHBottomNavigation.OnNavigationPositionListener() {
+            @Override
+            public void onPositionChange(int y) {
+                // Manage the new y position
 
+            }
+        });
     }
 
     @Override

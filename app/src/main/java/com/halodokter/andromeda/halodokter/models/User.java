@@ -1,4 +1,4 @@
-package com.halodokter.andromeda.halodokter;
+package com.halodokter.andromeda.halodokter.models;
 
 /**
  * Created by TRI-MATRIK on 3/15/2018.

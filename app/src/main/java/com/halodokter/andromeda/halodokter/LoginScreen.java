@@ -35,6 +35,7 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.halodokter.andromeda.halodokter.models.User;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -47,6 +48,7 @@ public class LoginScreen extends AppCompatActivity {
     private GoogleApiClient mGoogleApiClient;
     FirebaseAuth.AuthStateListener mAuthListener;
     Button loginbtn;
+    PrefManager prefManager;
 
     //facebook
     private CallbackManager mCallbackManager;
@@ -84,6 +86,8 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+
+        prefManager = new PrefManager(LoginScreen.this);
 
         etUserName = findViewById(R.id.edittextUsername);
         etPassword = findViewById(R.id.edittextPassword);
@@ -289,6 +293,7 @@ public class LoginScreen extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            prefManager.setLoggedInStatus(true);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.d(TAG, "signInWithCredential:failure", task.getException());
@@ -305,12 +310,13 @@ public class LoginScreen extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Toast.makeText(LoginScreen.this, "signInWithCredential:success", Toast.LENGTH_LONG).show();
+                            // Sign in success, update UI with the signed-in user's
+                            Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            prefManager.setLoggedInStatus(false);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(LoginScreen.this, "signInWithCredential:failure", Toast.LENGTH_LONG).show();
+                            Log.d(TAG, "signInWithCredential:Failure");
                         }
                     }
                 });
