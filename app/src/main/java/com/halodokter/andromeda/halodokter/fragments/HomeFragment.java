@@ -15,13 +15,12 @@ import android.widget.FrameLayout;
 
 import com.halodokter.andromeda.halodokter.adapters.HomeListAdapter;
 import com.halodokter.andromeda.halodokter.R;
+import com.halodokter.andromeda.halodokter.models.RecyclerItem;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
-    private FrameLayout fragmentContainer;
     private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
 
     public static HomeFragment newInstance(int index) {
         HomeFragment homeFragment = new HomeFragment();
@@ -56,47 +55,15 @@ public class HomeFragment extends Fragment {
     }
 
     private void initList(View view){
-        fragmentContainer = view.findViewById(R.id.fragment_container);
         recyclerView = view.findViewById(R.id.fragment_recycler_view);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        ArrayList<String> itemData = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            itemData.add("Fragment " + getArguments().getInt("index", -1) + " / Item" + i);
-        }
+        ArrayList<RecyclerItem> itemData = new ArrayList<>();
+        itemData.add(new RecyclerItem("Book an appointment", "Find doctors, clinics, hospitals and more", R.drawable.ic_add_appointment));
 
-        HomeListAdapter homeListAdapter = new HomeListAdapter(itemData);
+        HomeListAdapter homeListAdapter = new HomeListAdapter(itemData, getContext());
         recyclerView.setAdapter(homeListAdapter);
     }
-
-    public void refresh()
-    {
-        if(recyclerView != null)
-        {
-            recyclerView.smoothScrollToPosition(0);
-        }
-    }
-
-//    /**
-//     * Called when a fragment will be displayed
-//     */
-//    public void willBeDisplayed() {
-//        // Do what you want here, for example animate the content
-//        if (fragmentContainer != null) {
-//            Animation fadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
-//            fragmentContainer.startAnimation(fadeIn);
-//        }
-//    }
-//
-//    /**
-//     * Called when a fragment will be hidden
-//     */
-//    public void willBeHidden() {
-//        if (fragmentContainer != null) {
-//            Animation fadeOut = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out);
-//            fragmentContainer.startAnimation(fadeOut);
-//        }
-//    }
 }

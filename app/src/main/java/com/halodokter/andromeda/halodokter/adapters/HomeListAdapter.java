@@ -1,46 +1,58 @@
 package com.halodokter.andromeda.halodokter.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.halodokter.andromeda.halodokter.R;
+import com.halodokter.andromeda.halodokter.models.RecyclerItem;
 
 import java.util.ArrayList;
 
 public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ViewHolder> {
 
-    private ArrayList<String> mDataSet = new ArrayList<>();
+    private ArrayList<RecyclerItem> recyclerItems = new ArrayList<>();
+    private Context context;
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextView;
-        public ViewHolder(View itemView) {
+    class ViewHolder extends RecyclerView.ViewHolder {
+        TextView tvItemTitle;
+        TextView tvItemDescription;
+        ImageView ivItemIcon;
+        ViewHolder(View itemView) {
             super(itemView);
-            mTextView = itemView.findViewById(R.id.item);
+            tvItemTitle = itemView.findViewById(R.id.item_title);
+            tvItemDescription = itemView.findViewById(R.id.item_description);
+            ivItemIcon = itemView.findViewById(R.id.item_icon);
         }
     }
 
-    public HomeListAdapter(ArrayList<String> listItems) {
-        mDataSet.clear();
-        mDataSet.addAll(listItems);
+    public HomeListAdapter(ArrayList<RecyclerItem> recyclerItems, Context context) {
+        this.recyclerItems.clear();
+        this.recyclerItems.addAll(recyclerItems);
+        this.context = context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.fragment_list_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mTextView.setText(mDataSet.get(position));
+        RecyclerItem item = recyclerItems.get(position);
+        holder.tvItemTitle.setText(item.getItemTitle());
+        holder.tvItemDescription.setText(item.getItemDescription());
+        holder.ivItemIcon.setImageDrawable(context.getResources().getDrawable(item.getItemIcon()));
     }
 
     @Override
     public int getItemCount() {
-        return mDataSet.size();
+        return recyclerItems.size();
     }
 }
