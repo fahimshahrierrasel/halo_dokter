@@ -11,9 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
-import com.halodokter.andromeda.halodokter.adapters.HomeListAdapter;
+import com.halodokter.andromeda.halodokter.SearchAppointment;
+import com.halodokter.andromeda.halodokter.adapters.TwoSideDrawableListAdapter;
 import com.halodokter.andromeda.halodokter.R;
 import com.halodokter.andromeda.halodokter.models.RecyclerItem;
 
@@ -61,9 +61,9 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         ArrayList<RecyclerItem> itemData = new ArrayList<>();
-        itemData.add(new RecyclerItem("Book an appointment", "Find doctors, clinics, hospitals and more", R.drawable.ic_add_appointment));
+        itemData.add(new RecyclerItem("Book an appointment", "Find doctors, clinics, hospitals and more", R.drawable.ic_add_appointment, SearchAppointment.class));
 
-        HomeListAdapter homeListAdapter = new HomeListAdapter(itemData, getContext());
-        recyclerView.setAdapter(homeListAdapter);
+        TwoSideDrawableListAdapter twoSideDrawableListAdapter = new TwoSideDrawableListAdapter(itemData, getContext());
+        recyclerView.setAdapter(twoSideDrawableListAdapter);
     }
 }

@@ -1,6 +1,8 @@
 package com.halodokter.andromeda.halodokter.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.halodokter.andromeda.halodokter.R;
+import com.halodokter.andromeda.halodokter.SearchAppointment;
 import com.halodokter.andromeda.halodokter.models.RecyclerItem;
 
 import java.util.ArrayList;
 
-public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ViewHolder> {
+public class TwoSideDrawableListAdapter extends RecyclerView.Adapter<TwoSideDrawableListAdapter.ViewHolder> {
 
     private ArrayList<RecyclerItem> recyclerItems = new ArrayList<>();
     private Context context;
@@ -22,15 +25,17 @@ public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ViewHo
         TextView tvItemTitle;
         TextView tvItemDescription;
         ImageView ivItemIcon;
+        CardView cvCardItem;
         ViewHolder(View itemView) {
             super(itemView);
+            cvCardItem = itemView.findViewById(R.id.cvItemCardView);
             tvItemTitle = itemView.findViewById(R.id.item_title);
             tvItemDescription = itemView.findViewById(R.id.item_description);
             ivItemIcon = itemView.findViewById(R.id.item_icon);
         }
     }
 
-    public HomeListAdapter(ArrayList<RecyclerItem> recyclerItems, Context context) {
+    public TwoSideDrawableListAdapter(ArrayList<RecyclerItem> recyclerItems, Context context) {
         this.recyclerItems.clear();
         this.recyclerItems.addAll(recyclerItems);
         this.context = context;
@@ -38,17 +43,25 @@ public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ViewHo
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.fragment_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_item_two_side_drawable, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        RecyclerItem item = recyclerItems.get(position);
+        final RecyclerItem item = recyclerItems.get(position);
         holder.tvItemTitle.setText(item.getItemTitle());
         holder.tvItemDescription.setText(item.getItemDescription());
         holder.ivItemIcon.setImageDrawable(context.getResources().getDrawable(item.getItemIcon()));
+        holder.cvCardItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(item.getActivityClass() != null) {
+                    context.startActivity(new Intent(context, item.getActivityClass()));
+                }
+            }
+        });
     }
 
     @Override

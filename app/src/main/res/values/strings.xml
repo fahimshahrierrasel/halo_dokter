@@ -35,5 +35,8 @@
         <item>Female</item>
         <item>Both</item>
     </string-array>
+    <string name="title_activity_search_appointment">Find &amp; Book</string>
+    <string name="search_appointment">Doctors, specialities, clinics, hospitals</string>
+    <string name="find_and_view">Find &amp; View</string>
 
 </resources>
