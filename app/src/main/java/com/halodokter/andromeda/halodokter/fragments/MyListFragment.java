@@ -12,18 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.halodokter.andromeda.halodokter.SearchAppointment;
-import com.halodokter.andromeda.halodokter.adapters.TwoSideDrawableListAdapter;
 import com.halodokter.andromeda.halodokter.R;
-import com.halodokter.andromeda.halodokter.models.RecyclerItem;
+import com.halodokter.andromeda.halodokter.SearchAppointment;
+import com.halodokter.andromeda.halodokter.adapters.DetailsItemListAdapter;
+import com.halodokter.andromeda.halodokter.models.DetailsListItem;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class MyListFragment extends Fragment {
     private RecyclerView recyclerView;
 
-    public static HomeFragment newInstance(int index) {
-        HomeFragment homeFragment = new HomeFragment();
+    public static MyListFragment newInstance(int index) {
+        MyListFragment homeFragment = new MyListFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("index", index);
         homeFragment.setArguments(bundle);
@@ -43,7 +43,8 @@ public class HomeFragment extends Fragment {
         }
 
         if (toolbar != null) {
-            toolbar.setTitle("Home");
+
+            toolbar.setTitle("Your List");
         }
         initList(view);
         return view;
@@ -55,10 +56,13 @@ public class HomeFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        ArrayList<RecyclerItem> itemData = new ArrayList<>();
-        itemData.add(new RecyclerItem("Book an appointment", "Find doctors, clinics, hospitals and more", R.drawable.ic_add_appointment, SearchAppointment.class));
+        ArrayList<DetailsListItem> itemData = new ArrayList<>();
+        itemData.add(new DetailsListItem("Your health profile is only 20% complete", getResources().getString(R.string.lorem_ipsum), 0, "Add Details", null));
+        itemData.add(new DetailsListItem("Use 'HaloDoc' code to get 25% off on medicines", getResources().getString(R.string.lorem_ipsum), 0, "Order Now", null));
+        itemData.add(new DetailsListItem("Personalise your reading experience", getResources().getString(R.string.lorem_ipsum), 0, "Add Interests", null));
+        itemData.add(new DetailsListItem("Refer and save money on medicine order", getResources().getString(R.string.lorem_ipsum), 0, "Share Code", null));
 
-        TwoSideDrawableListAdapter twoSideDrawableListAdapter = new TwoSideDrawableListAdapter(itemData, getContext());
+        DetailsItemListAdapter twoSideDrawableListAdapter = new DetailsItemListAdapter(itemData, getContext());
         recyclerView.setAdapter(twoSideDrawableListAdapter);
     }
 }

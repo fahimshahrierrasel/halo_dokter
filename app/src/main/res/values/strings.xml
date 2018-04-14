@@ -24,16 +24,25 @@
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
 
-    <string name="heading">Book an appointment</string>
-    <string name="paragraph">Find doctors clinics,hospitals, and more</string>
+    <string name="heading">Item Header</string>
+    <string name="paragraph">Item description</string>
     <string name="home">Home</string>
     <string name="list">YOUR LIST</string>
     <string name="profile">PROFILE</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nam nulla orci, pellentesque ac interdum in, dignissim non libero. Integer tempus volutpat dictum.
+        Integer vulputate ex vel orci pretium, eu porttitor mauris lobortis.
+        Nullam eget odio ultricies nunc iaculis porttitor in et ipsum
+    </string>
 
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
         <item>Both</item>
     </string-array>
+    <string name="title_activity_search_appointment">Find &amp; Book</string>
+    <string name="search_appointment">Doctors, specialities, clinics, hospitals</string>
+    <string name="find_and_view">Find &amp; View</string>
 
 </resources>

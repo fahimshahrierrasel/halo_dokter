@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
 import com.halodokter.andromeda.halodokter.fragments.HomeFragment;
+import com.halodokter.andromeda.halodokter.fragments.MyListFragment;
 import com.halodokter.andromeda.halodokter.fragments.ProfileFragment;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 currentFragment = HomeFragment.newInstance(0);
                 break;
             case 1:
-                currentFragment = HomeFragment.newInstance(1);
+                currentFragment = MyListFragment.newInstance(1);
                 break;
             case 2:
                 currentFragment = ProfileFragment.newInstance(0);
