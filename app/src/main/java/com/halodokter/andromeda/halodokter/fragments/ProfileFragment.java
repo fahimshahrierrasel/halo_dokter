@@ -8,6 +8,8 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,6 +29,10 @@ import com.halodokter.andromeda.halodokter.GlideApp;
 import com.halodokter.andromeda.halodokter.LoginScreen;
 import com.halodokter.andromeda.halodokter.R;
 import com.halodokter.andromeda.halodokter.SettingsActivity;
+import com.halodokter.andromeda.halodokter.adapters.RightSideDrawableNoDescListAdapter;
+import com.halodokter.andromeda.halodokter.models.RecyclerItem;
+
+import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
     public static final String TAG = ProfileFragment.class.getSimpleName();
@@ -36,6 +42,7 @@ public class ProfileFragment extends Fragment {
     ImageView profileImage;
     TextView profileName;
     String userName;
+    RecyclerView recyclerView;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -113,8 +120,28 @@ public class ProfileFragment extends Fragment {
                 }
             }
         });
-
+        initList(view);
         return view;
+    }
+    private void initList(View view){
+        recyclerView = view.findViewById(R.id.rvProfileItems);
+        recyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+
+        ArrayList<RecyclerItem> itemData = new ArrayList<>();
+        itemData.add(new RecyclerItem("My doctors", " ", 0, null));
+        itemData.add(new RecyclerItem("Appointments", " ", 0, null));
+        itemData.add(new RecyclerItem("Online consultations", " ", 0, null));
+        itemData.add(new RecyclerItem("Medical records", " ", 0, null));
+        itemData.add(new RecyclerItem("Orders", " ", 0, null));
+        itemData.add(new RecyclerItem("Reminders", " ", 0, null));
+        itemData.add(new RecyclerItem("Bookmarked articles", " ", 0, null));
+        itemData.add(new RecyclerItem("Health interests", " ", 0, null));
+        itemData.add(new RecyclerItem("My payments", " ", 0, null));
+
+        RightSideDrawableNoDescListAdapter rightSideDrawableNoDescListAdapter = new RightSideDrawableNoDescListAdapter(itemData, getContext());
+        recyclerView.setAdapter(rightSideDrawableNoDescListAdapter);
     }
 
     @Override
