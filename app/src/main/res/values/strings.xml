@@ -30,6 +30,12 @@
     <string name="list">YOUR LIST</string>
     <string name="profile">PROFILE</string>
 
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nam nulla orci, pellentesque ac interdum in, dignissim non libero. Integer tempus volutpat dictum.
+        Integer vulputate ex vel orci pretium, eu porttitor mauris lobortis.
+        Nullam eget odio ultricies nunc iaculis porttitor in et ipsum
+    </string>
+
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
