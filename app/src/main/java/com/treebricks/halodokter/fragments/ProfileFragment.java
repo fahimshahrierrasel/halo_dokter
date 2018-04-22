@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.UserInfo;
 import com.treebricks.halodokter.GlideApp;
 import com.treebricks.halodokter.LoginScreen;
@@ -172,14 +173,19 @@ public class ProfileFragment extends Fragment {
     private String getUserImageUrl(FirebaseUser user)
     {
         String facebookUserId = "";
+        String imageUrl = "";
         // find the Facebook profile and get the user's id
         for(UserInfo profile : user.getProviderData()) {
             // check if the provider id matches "facebook.com"
             if(FacebookAuthProvider.PROVIDER_ID.equals(profile.getProviderId())) {
                 facebookUserId = profile.getUid();
+                imageUrl = "https://graph.facebook.com/" + facebookUserId + "/picture?type=large";
+            }else if(GoogleAuthProvider.PROVIDER_ID.equals(profile.getProviderId()))
+            {
+                imageUrl = profile.getPhotoUrl().toString();
             }
         }
         // alternatively, use '?type=small|medium|large' instead of ?height=
-        return "https://graph.facebook.com/" + facebookUserId + "/picture?type=large";
+        return imageUrl;
     }
 }
