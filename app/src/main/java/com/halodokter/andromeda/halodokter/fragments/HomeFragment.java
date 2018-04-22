@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.halodokter.andromeda.halodokter.FAQActivity;
 import com.halodokter.andromeda.halodokter.SearchAppointment;
 import com.halodokter.andromeda.halodokter.adapters.TwoSideDrawableListAdapter;
 import com.halodokter.andromeda.halodokter.R;
@@ -57,6 +58,7 @@ public class HomeFragment extends Fragment {
 
         ArrayList<RecyclerItem> itemData = new ArrayList<>();
         itemData.add(new RecyclerItem("Book an appointment", "Find doctors, clinics, hospitals and more", R.drawable.ic_add_appointment, SearchAppointment.class));
+        itemData.add(new RecyclerItem("Ask a free question", "Get answers from doctors and experts", R.drawable.question, FAQActivity.class));
 
         TwoSideDrawableListAdapter twoSideDrawableListAdapter = new TwoSideDrawableListAdapter(itemData, getContext());
         recyclerView.setAdapter(twoSideDrawableListAdapter);
