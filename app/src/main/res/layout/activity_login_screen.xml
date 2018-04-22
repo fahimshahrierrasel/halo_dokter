@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A854D4"
-    tools:context="com.halodokter.andromeda.halodokter.LoginScreen">
+    tools:context="com.treebricks.halodokter.LoginScreen">
 
 
     <LinearLayout
