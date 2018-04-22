@@ -52,7 +52,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.treebricks.halodokter.MainActivity" />
         </activity>
-        <activity android:name="com.treebricks.halodokter.FAQActivity" />
+        <activity android:name="com.treebricks.halodokter.FAQActivity"
+            android:theme="@style/AppThemeActionBar"/>
     </application>
 
 </manifest>
