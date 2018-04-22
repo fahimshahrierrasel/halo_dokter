@@ -1,4 +1,4 @@
-package com.treebricks.halodoktor.adapters;
+package com.treebricks.halodokter.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.treebricks.halodoktor.halodokter.R;
-import com.treebricks.halodoktor.models.DetailsListItem;
+import com.treebricks.halodokter.R;
+import com.treebricks.halodokter.models.DetailsListItem;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.treebricks.halodoktor.fragments;
+package com.treebricks.halodokter.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,9 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.treebricks.halodoktor.halodokter.R;
-import com.treebricks.halodoktor.adapters.DetailsItemListAdapter;
-import com.treebricks.halodoktor.models.DetailsListItem;
+import com.treebricks.halodokter.R;
+import com.treebricks.halodokter.adapters.DetailsItemListAdapter;
+import com.treebricks.halodokter.models.DetailsListItem;
 
 import java.util.ArrayList;
 

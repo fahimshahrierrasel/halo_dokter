@@ -1,4 +1,4 @@
-package com.treebricks.halodoktor.models;
+package com.treebricks.halodokter.models;
 
 /**
  * Created by TRI-MATRIK on 3/15/2018.

@@ -1,4 +1,4 @@
-package com.treebricks.halodoktor.fragments;
+package com.treebricks.halodokter.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,12 +25,12 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
-import com.treebricks.halodoktor.halodokter.GlideApp;
-import com.treebricks.halodoktor.LoginScreen;
-import com.treebricks.halodoktor.halodokter.R;
-import com.treebricks.halodoktor.SettingsActivity;
-import com.treebricks.halodoktor.adapters.RightSideDrawableNoDescListAdapter;
-import com.treebricks.halodoktor.models.RecyclerItem;
+import com.treebricks.halodokter.GlideApp;
+import com.treebricks.halodokter.LoginScreen;
+import com.treebricks.halodokter.R;
+import com.treebricks.halodokter.SettingsActivity;
+import com.treebricks.halodokter.adapters.RightSideDrawableNoDescListAdapter;
+import com.treebricks.halodokter.models.RecyclerItem;
 
 import java.util.ArrayList;
 

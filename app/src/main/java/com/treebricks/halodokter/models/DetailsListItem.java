@@ -1,4 +1,4 @@
-package com.treebricks.halodoktor.models;
+package com.treebricks.halodokter.models;
 
 public class DetailsListItem extends RecyclerItem {
     private String buttonText;

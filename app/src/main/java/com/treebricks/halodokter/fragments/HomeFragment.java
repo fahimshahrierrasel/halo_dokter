@@ -1,4 +1,4 @@
-package com.treebricks.halodoktor.fragments;
+package com.treebricks.halodokter.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,11 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.treebricks.halodoktor.FAQActivity;
-import com.treebricks.halodoktor.SearchAppointment;
-import com.treebricks.halodoktor.adapters.TwoSideDrawableListAdapter;
-import com.treebricks.halodoktor.R;
-import com.treebricks.halodoktor.models.RecyclerItem;
+import com.treebricks.halodokter.FAQActivity;
+import com.treebricks.halodokter.SearchAppointment;
+import com.treebricks.halodokter.adapters.TwoSideDrawableListAdapter;
+import com.treebricks.halodokter.R;
+import com.treebricks.halodokter.models.RecyclerItem;
 
 import java.util.ArrayList;
 

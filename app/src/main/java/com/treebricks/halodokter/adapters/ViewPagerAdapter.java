@@ -1,13 +1,13 @@
-package com.treebricks.halodoktor.adapters;
+package com.treebricks.halodokter.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
-import com.treebricks.halodoktor.fragments.HomeFragment;
-import com.treebricks.halodoktor.fragments.MyListFragment;
-import com.treebricks.halodoktor.fragments.ProfileFragment;
+import com.treebricks.halodokter.fragments.HomeFragment;
+import com.treebricks.halodokter.fragments.MyListFragment;
+import com.treebricks.halodokter.fragments.ProfileFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
