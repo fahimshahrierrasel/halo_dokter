@@ -44,5 +44,13 @@
     <string name="title_activity_search_appointment">Find &amp; Book</string>
     <string name="search_appointment">Doctors, specialities, clinics, hospitals</string>
     <string name="find_and_view">Find &amp; View</string>
+    <string name="faq_description_counter">0 / 1000</string>
+    <string name="faq_title_counter">0 / 40</string>
+    <string name="faq_problem_type_hint">Problem Type - Treatment pref.</string>
+    <string name="faq_profile_select_hint">Select Profile</string>
+    <string name="faq_title_hint">Title (min 10 chars)</string>
+    <string name="faq_desc_hint">Description (min 100 chars)</string>
+    <string name="faq_for_text">For</string>
+    <string name="faq_activity_label">Ask free question</string>
 
 </resources>
