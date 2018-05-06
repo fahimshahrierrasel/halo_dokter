@@ -33,23 +33,12 @@
             android:padding="10dp" />
     </android.support.v7.widget.CardView>
 
-    <TextView
-        android:id="@+id/tvSearchCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/find_and_view"
-        app:layout_constraintBottom_toTopOf="@id/rvSearchedItem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cvSearchContainer" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvSearchedItem"
-        android:layout_width="0dp"
+    <FrameLayout
+        android:id="@+id/appointmentFragmentPlaceholder"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvSearchContainer"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSearchCategory" />
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
