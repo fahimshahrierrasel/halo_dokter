@@ -52,5 +52,6 @@
     <string name="faq_desc_hint">Description (min 100 chars)</string>
     <string name="faq_for_text">For</string>
     <string name="faq_activity_label">Ask free question</string>
+    <string name="top_specialities">Top specialities</string>
 
 </resources>

@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.treebricks.halodokter.R;
 
-public class BookappointmentActivity extends AppCompatActivity {
+public class DoctorAppointmentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

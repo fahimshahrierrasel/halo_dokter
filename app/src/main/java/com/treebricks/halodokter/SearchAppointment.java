@@ -3,17 +3,10 @@ package com.treebricks.halodokter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 
-import com.treebricks.halodokter.adapters.LeftSideDrawableListAdapter;
-import com.treebricks.halodokter.R;
-import com.treebricks.halodokter.fragments.BookAppointmentMainFragment;
-import com.treebricks.halodokter.models.RecyclerItem;
-
-import java.util.ArrayList;
+import com.treebricks.halodokter.fragments.SearchAppointmentMainFragment;
 
 public class SearchAppointment extends AppCompatActivity {
 
@@ -32,7 +25,7 @@ public class SearchAppointment extends AppCompatActivity {
         searchKey = findViewById(R.id.etSearchKey);
 
         FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().replace(R.id.appointmentFragmentPlaceholder, new BookAppointmentMainFragment()).commit();
+        fm.beginTransaction().replace(R.id.appointment_fragment_placeholder, new SearchAppointmentMainFragment()).commit();
 
     }
 

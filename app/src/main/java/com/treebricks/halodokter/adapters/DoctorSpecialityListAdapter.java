@@ -33,6 +33,7 @@ public class DoctorSpecialityListAdapter extends RecyclerView.Adapter<DoctorSpec
     public DoctorSpecialityListAdapter(ArrayList<String> recyclerItems, Context context) {
         this.recyclerItems.clear();
         this.recyclerItems.addAll(recyclerItems);
+
         this.context = context;
     }
 

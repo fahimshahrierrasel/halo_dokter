@@ -42,7 +42,7 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-        <activity android:name="com.treebricks.halodokter.BookappointmentActivity" />
+        <activity android:name="com.treebricks.halodokter.DoctorAppointmentActivity" />
         <activity
             android:name="com.treebricks.halodokter.SettingsActivity"
             android:theme="@style/AppThemeActionBar" />
