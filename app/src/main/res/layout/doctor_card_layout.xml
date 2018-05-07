@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/ll_doctor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_doctor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Q. Public"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="Visits Tomorrow" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_doctor_speciality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Doctor Specialities"
+            app:layout_constraintTop_toBottomOf="@id/ll_doctor_name" />
+
+        <TextView
+            android:id="@+id/tv_doctor_chamber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Doctor Chamber"
+            app:layout_constraintTop_toBottomOf="@id/tv_doctor_speciality" />
+
+        <TextView
+            android:id="@+id/tv_doctor_chamber_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Doctor Chamber Location"
+            app:layout_constraintTop_toBottomOf="@id/tv_doctor_chamber" />
+
+        <TextView
+            android:id="@+id/tv_doctor_exp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="27 yrs exp"
+            app:layout_constraintTop_toBottomOf="@id/tv_doctor_chamber_location" />
+
+        <TextView
+            android:id="@+id/tv_doctor_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="$ 200"
+            app:layout_constraintStart_toEndOf="@id/tv_doctor_exp"
+            app:layout_constraintTop_toBottomOf="@id/tv_doctor_chamber_location" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_doctor_fee" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

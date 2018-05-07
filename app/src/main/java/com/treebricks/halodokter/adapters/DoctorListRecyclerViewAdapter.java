@@ -1,22 +1,18 @@
 package com.treebricks.halodokter.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.treebricks.halodokter.DoctorsListActivity;
 import com.treebricks.halodokter.R;
-import com.treebricks.halodokter.models.RecyclerItem;
 
 import java.util.ArrayList;
 
-public class DoctorSpecialityListAdapter extends RecyclerView.Adapter<DoctorSpecialityListAdapter.ViewHolder> {
+public class DoctorListRecyclerViewAdapter extends RecyclerView.Adapter<DoctorListRecyclerViewAdapter.ViewHolder> {
 
     private ArrayList<String> recyclerItems = new ArrayList<>();
     private Context context;
@@ -26,12 +22,12 @@ public class DoctorSpecialityListAdapter extends RecyclerView.Adapter<DoctorSpec
         CardView cvCardItem;
         ViewHolder(View itemView) {
             super(itemView);
-            cvCardItem = itemView.findViewById(R.id.cvItemCardView);
-            tvItemTitle = itemView.findViewById(R.id.item_title);
+            cvCardItem = itemView.findViewById(R.id.card_container);
+            tvItemTitle = itemView.findViewById(R.id.tv_doctor_name);
         }
     }
 
-    public DoctorSpecialityListAdapter(ArrayList<String> recyclerItems, Context context) {
+    public DoctorListRecyclerViewAdapter(ArrayList<String> recyclerItems, Context context) {
         this.recyclerItems.clear();
         this.recyclerItems.addAll(recyclerItems);
 
@@ -40,18 +36,17 @@ public class DoctorSpecialityListAdapter extends RecyclerView.Adapter<DoctorSpec
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.list_item_no_drawable, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.doctor_card_layout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final String item = recyclerItems.get(position);
-        holder.tvItemTitle.setText(item);
         holder.cvCardItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, DoctorsListActivity.class));
+
             }
         });
     }

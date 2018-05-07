@@ -40,9 +40,6 @@ public class SearchAppointmentMainFragment extends Fragment {
         itemData.add(new RecyclerItem("Therapists & Nutritionists", "Acupuncturist, Physiotherapist, etc.", R.drawable.ic_add_appointment, null));
 
 
-
-
-
         LeftSideDrawableListAdapter leftSideDrawableListAdapter = new LeftSideDrawableListAdapter(itemData, getActivity());
         searchRecyclerView.setAdapter(leftSideDrawableListAdapter);
         leftSideDrawableListAdapter.setOnItemClickListener(new LeftSideDrawableListAdapter.OnItemClickListener() {
