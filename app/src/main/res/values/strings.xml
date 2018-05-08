@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Halo Dokter</string>
+    <string name="app_name">Dokuter</string>
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
 
-    <string name="facebook_app_id">213689756055396</string>
-    <string name="fb_login_protocol_scheme">fb213689756055396</string>
+    <string name="facebook_app_id">155811945261263</string>
+    <string name="fb_login_protocol_scheme">fb155811945261263</string>
 
 
     <string name="slide_1_title">Doctor Appointment</string>

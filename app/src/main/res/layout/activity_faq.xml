@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:focusable="true"
-    tools:context=".FAQActivity">
+    tools:context="com.treebricks.dokuter.FAQActivity">
 
     <TextView
         android:id="@+id/forProfile"
