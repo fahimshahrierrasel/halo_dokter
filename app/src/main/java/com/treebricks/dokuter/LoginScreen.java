@@ -1,6 +1,7 @@
 package com.treebricks.dokuter;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -36,7 +38,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.treebricks.dokuter.models.User;
-import com.treebricks.dokuter.R;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -73,7 +74,7 @@ public class LoginScreen extends AppCompatActivity {
 
     //edit text login criteria
     void checkFieldsForEmptyValues() {
-        loginbtn = findViewById(R.id.loginbtn);
+        loginbtn = findViewById(R.id.btn_login);
         String s1 = etUserName.getText().toString();
         String s2 = etPassword.getText().toString();
         if (s1.equals("") || s2.equals("")) {
@@ -88,10 +89,13 @@ public class LoginScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
 
+        // Making notification bar transparent
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         prefManager = new PrefManager(LoginScreen.this);
 
-        etUserName = findViewById(R.id.edittextUsername);
-        etPassword = findViewById(R.id.edittextPassword);
+        etUserName = findViewById(R.id.et_username);
+        etPassword = findViewById(R.id.et_password);
 
         // set listeners
         etUserName.addTextChangedListener(mTextWatcher);
@@ -100,7 +104,7 @@ public class LoginScreen extends AppCompatActivity {
         // run once to disable if empty
         checkFieldsForEmptyValues();
 
-        SignInButton bGoogleSignIn = findViewById(R.id.sign_in_button);
+        SignInButton bGoogleSignIn = findViewById(R.id.google_sign_in_button);
         mAuth = FirebaseAuth.getInstance();
 
         // redirect to another activity
@@ -148,7 +152,7 @@ public class LoginScreen extends AppCompatActivity {
 
         // Initialize Facebook Login button
         mCallbackManager = CallbackManager.Factory.create();
-        final LoginButton loginButton = findViewById(R.id.btnFacebookLogin);
+        final LoginButton loginButton = findViewById(R.id.facebook_sign_in_button);
         loginButton.setReadPermissions("email", "public_profile");
         loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -169,7 +173,6 @@ public class LoginScreen extends AppCompatActivity {
                 handleFacebookAccessToken(null);
             }
         });
-
 
         LoginManager.getInstance().registerCallback(mCallbackManager,
                 new FacebookCallback<LoginResult>() {

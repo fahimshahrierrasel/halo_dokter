@@ -34,4 +34,9 @@
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
+    <style name="login_edit_text">
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:textColorHint">@color/md_white_1000</item>
+    </style>
+
 </resources>

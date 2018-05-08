@@ -5,10 +5,6 @@
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
 
-    <string name="facebook_app_id">155811945261263</string>
-    <string name="fb_login_protocol_scheme">fb155811945261263</string>
-
-
     <string name="slide_1_title">Doctor Appointment</string>
     <string name="slide_1_desc">Book an appointment with the right doctor.</string>
 
@@ -53,5 +49,9 @@
     <string name="faq_for_text">For</string>
     <string name="faq_activity_label">Ask free question</string>
     <string name="top_specialities">Top specialities</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
 
 </resources>

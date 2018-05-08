@@ -8,6 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.treebricks.dokuter.R;
 
@@ -19,7 +20,7 @@ public class SplashScreen extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
 
-        ImageView imageViewChef = findViewById(R.id.imageView_logo);
+        TextView imageViewChef = findViewById(R.id.imageView_logo);
         Animation loadAnimation = AnimationUtils.loadAnimation(this,R.anim.alpha_transaction);
         imageViewChef.startAnimation(loadAnimation);
 
