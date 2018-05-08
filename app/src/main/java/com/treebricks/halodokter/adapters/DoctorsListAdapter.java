@@ -12,7 +12,7 @@ import com.treebricks.halodokter.R;
 
 import java.util.ArrayList;
 
-public class DoctorListRecyclerViewAdapter extends RecyclerView.Adapter<DoctorListRecyclerViewAdapter.ViewHolder> {
+public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.ViewHolder> {
 
     private ArrayList<String> recyclerItems = new ArrayList<>();
     private Context context;
@@ -27,7 +27,8 @@ public class DoctorListRecyclerViewAdapter extends RecyclerView.Adapter<DoctorLi
         }
     }
 
-    public DoctorListRecyclerViewAdapter(ArrayList<String> recyclerItems, Context context) {
+
+    public DoctorsListAdapter(ArrayList<String> recyclerItems, Context context) {
         this.recyclerItems.clear();
         this.recyclerItems.addAll(recyclerItems);
 
