@@ -53,5 +53,10 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="doctor_image">Doctor Image</string>
+    <string name="name">John Q. Public</string>
+    <string name="doctor_background_image">Doctor Background Image</string>
+    <string name="services">Hypertension Treatment \nChronic Disease \nDiabetes Management</string>
+    <string name="specialization">General Physician \nFamily Physician \nCardiologist</string>
 
 </resources>
