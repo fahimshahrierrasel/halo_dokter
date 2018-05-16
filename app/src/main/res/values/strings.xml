@@ -59,4 +59,16 @@
     <string name="services">Hypertension Treatment \nChronic Disease \nDiabetes Management</string>
     <string name="specialization">General Physician \nFamily Physician \nCardiologist</string>
 
+    <string-array name="consultation_array">
+        <item>Follow Up</item>
+        <item>Consultation</item>
+    </string-array>
+
+    <string-array name="time_slot_array">
+        <item>09:30 AM - 12:00 PM</item>
+        <item>01:30 PM - 03:00 PM</item>
+        <item>03:30 AM - 05:00 PM</item>
+        <item>05:30 AM - 9:00 PM</item>
+    </string-array>
+
 </resources>

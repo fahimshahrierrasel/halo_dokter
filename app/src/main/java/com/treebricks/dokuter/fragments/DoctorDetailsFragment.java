@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -59,6 +60,17 @@ public class DoctorDetailsFragment extends Fragment implements OnMapReadyCallbac
         }
 
         mapView.getMapAsync(DoctorDetailsFragment.this);
+
+        Button btnBook = view.findViewById(R.id.btn_book_on_details);
+        btnBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.doctor_list_fragment_placeholder, TimeSlotSelectFragment.newInstance("doc"))
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
 
     }
 

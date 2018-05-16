@@ -63,7 +63,7 @@ public class DoctorListFragment extends Fragment {
         List<DoctorListItem> items = new ArrayList<>();
 
         for (int i = 0; i < 15; i++) {
-            DoctorListItem item = new DoctorListItem("Fahim Shahrier Rasel", null,
+            DoctorListItem item = new DoctorListItem("John Q. Public", null,
                     null, null, null, null,
                     null);
             items.add(item);
