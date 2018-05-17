@@ -18,7 +18,7 @@
             android:layout_width="150sp"
             android:layout_height="120sp"
             android:layout_gravity="center"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo_2" />
     </LinearLayout>
     <LinearLayout
         android:layout_below="@+id/logo_name"

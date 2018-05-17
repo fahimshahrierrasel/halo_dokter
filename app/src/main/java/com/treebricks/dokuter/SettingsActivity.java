@@ -12,7 +12,6 @@ import android.os.Bundle;
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.treebricks.dokuter.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -31,12 +30,12 @@ public class SettingsActivity extends AppCompatActivity {
     public static class ApplicationPreferenceFragment extends PreferenceFragment{
         private FirebaseAuth mAuth;
         private FirebaseAuth.AuthStateListener mAuthListener;
-        PrefManager prefManager;
+        SharedPrefManager sharedPrefManager;
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             mAuth = FirebaseAuth.getInstance();
-            prefManager = new PrefManager(getActivity());
+            sharedPrefManager = new SharedPrefManager(getActivity());
             addPreferencesFromResource(R.xml.preferences);
 
 
@@ -46,7 +45,7 @@ public class SettingsActivity extends AppCompatActivity {
                     FirebaseUser user = mAuth.getCurrentUser();
                     if (user == null) {
                         startActivity(new Intent(getActivity(), LoginScreen.class));
-                        prefManager.setLoggedInStatus(false);
+                        sharedPrefManager.setLoggedInStatus(false);
                     }
                 }
             };
@@ -57,7 +56,7 @@ public class SettingsActivity extends AppCompatActivity {
                 public boolean onPreferenceClick(Preference preference) {
                     mAuth.signOut();
                     LoginManager.getInstance().logOut();
-                    prefManager.setLoggedInStatus(false);
+                    sharedPrefManager.setLoggedInStatus(false);
                     startActivity(new Intent(getActivity(), LoginScreen.class));
 
                     getActivity().finish();

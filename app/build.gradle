@@ -43,6 +43,7 @@ dependencies {
     implementation "com.mikepenz:iconics-core:3.0.3@aar"
     implementation "com.mikepenz:iconics-views:3.0.3@aar"
     implementation 'com.mikepenz:community-material-typeface:2.0.46.1@aar'
+    implementation 'com.github.apl-devs:appintro:v4.2.3'
     implementation 'com.google.android.gms:play-services-maps:15.0.0'
 
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'

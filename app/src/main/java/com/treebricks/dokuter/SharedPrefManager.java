@@ -7,23 +7,18 @@ import android.content.SharedPreferences;
  * Created by TRI-MATRIK on 3/3/2018.
  */
 
-public class PrefManager {
+public class SharedPrefManager {
 
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
-    private Context _context;
-
-    // shared pref mode
-    int PRIVATE_MODE = 0;
 
     // Shared preferences file name
     private static final String PREF_NAME = "dokuter";
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     private static final String IS_LOGGED_ID = "IsLoggedIn";
 
-    PrefManager(Context context) {
-        this._context = context;
-        pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
+    SharedPrefManager(Context context) {
+        pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         editor = pref.edit();
         editor.apply();
     }
@@ -42,7 +37,6 @@ public class PrefManager {
 
     public boolean isFirstTimeLaunch() {
         return pref.getBoolean(IS_FIRST_TIME_LAUNCH, true);
-
     }
 
     public boolean isLoggedIn()

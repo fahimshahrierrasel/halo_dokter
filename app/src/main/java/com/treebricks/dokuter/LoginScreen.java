@@ -1,7 +1,6 @@
 package com.treebricks.dokuter;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -50,7 +49,7 @@ public class LoginScreen extends AppCompatActivity {
     private GoogleApiClient mGoogleApiClient;
     FirebaseAuth.AuthStateListener mAuthListener;
     Button loginbtn;
-    PrefManager prefManager;
+    SharedPrefManager sharedPrefManager;
 
     //facebook
     private CallbackManager mCallbackManager;
@@ -92,7 +91,7 @@ public class LoginScreen extends AppCompatActivity {
         // Making notification bar transparent
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        prefManager = new PrefManager(LoginScreen.this);
+        sharedPrefManager = new SharedPrefManager(LoginScreen.this);
 
         etUserName = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
@@ -297,7 +296,7 @@ public class LoginScreen extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            prefManager.setLoggedInStatus(true);
+                            sharedPrefManager.setLoggedInStatus(true);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.d(TAG, "signInWithCredential:failure", task.getException());
@@ -317,7 +316,7 @@ public class LoginScreen extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            prefManager.setLoggedInStatus(false);
+                            sharedPrefManager.setLoggedInStatus(false);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.d(TAG, "signInWithCredential:Failure");
