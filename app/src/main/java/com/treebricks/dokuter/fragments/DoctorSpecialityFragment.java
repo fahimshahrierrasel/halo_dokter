@@ -55,18 +55,18 @@ public class DoctorSpecialityFragment extends Fragment {
 
     private void setArrayListItems(String category){
         items = new ArrayList<>();
-        if(category.equals("doc")) {
-            items.clear();
-            items.add("Ophthalmologist");
-            items.add("Dermatologist");
-            items.add("Cardiologist");
-            items.add("Gastroenterologist");
-            items.add("Psychiatrist");
-            items.add("Eat-Nose-Throat (ENT) Specialist");
-            items.add("Gynecologist/Obstetrician");
-            items.add("Neurologist");
-            items.add("Urologist");
-        }else if(category.equals("den")){
+//        if(category.equals("doc")) {
+//            items.clear();
+//            items.add("Ophthalmologist");
+//            items.add("Dermatologist");
+//            items.add("Cardiologist");
+//            items.add("Gastroenterologist");
+//            items.add("Psychiatrist");
+//            items.add("Eat-Nose-Throat (ENT) Specialist");
+//            items.add("Gynecologist/Obstetrician");
+//            items.add("Neurologist");
+//            items.add("Urologist");
+//        }else if(category.equals("den")){
             items.clear();
             items.add("Dentist");
             items.add("Prosthodonist");
@@ -74,6 +74,6 @@ public class DoctorSpecialityFragment extends Fragment {
             items.add("Pediatric Dentist");
             items.add("Endodontist");
             items.add("Implantologist");
-        }
+//        }
     }
 }

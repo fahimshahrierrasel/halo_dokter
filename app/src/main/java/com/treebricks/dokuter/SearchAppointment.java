@@ -7,13 +7,10 @@ import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 
 import com.treebricks.dokuter.fragments.SearchAppointmentMainFragment;
-import com.treebricks.dokuter.R;
 
 public class SearchAppointment extends AppCompatActivity {
 
     EditText searchKey;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +18,16 @@ public class SearchAppointment extends AppCompatActivity {
         setContentView(R.layout.activity_search_appointment);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         searchKey = findViewById(R.id.etSearchKey);
+
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Book an Appointment");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().replace(R.id.appointment_fragment_placeholder, new SearchAppointmentMainFragment()).commit();
 
     }
-
 }

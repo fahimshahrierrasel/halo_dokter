@@ -57,7 +57,6 @@
             android:theme="@style/AppThemeActionBar" />
         <activity
             android:name="com.treebricks.dokuter.SearchAppointment"
-            android:label="@string/title_activity_search_appointment"
             android:theme="@style/AppThemeNoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

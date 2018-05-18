@@ -34,10 +34,10 @@ public class SearchAppointmentMainFragment extends Fragment {
         searchRecyclerView.setLayoutManager(layoutManager);
 
         ArrayList<RecyclerItem> itemData = new ArrayList<>();
-        itemData.add(new RecyclerItem("Doctors", "Cardiologist, Dermatologist, etc.", R.drawable.ic_add_appointment, null));
+        //itemData.add(new RecyclerItem("Doctors", "Cardiologist, Dermatologist, etc.", R.drawable.ic_add_appointment, null));
         itemData.add(new RecyclerItem("Dentists", "Dentists, Prosthodontist, etc.", R.drawable.ic_add_appointment, null));
-        itemData.add(new RecyclerItem("Alternative Medicine Doctors(AYUSH)", "Ayurveda, Homeopath, etc.", R.drawable.ic_add_appointment, null));
-        itemData.add(new RecyclerItem("Therapists & Nutritionists", "Acupuncturist, Physiotherapist, etc.", R.drawable.ic_add_appointment, null));
+        //itemData.add(new RecyclerItem("Alternative Medicine Doctors(AYUSH)", "Ayurveda, Homeopath, etc.", R.drawable.ic_add_appointment, null));
+        //itemData.add(new RecyclerItem("Therapists & Nutritionists", "Acupuncturist, Physiotherapist, etc.", R.drawable.ic_add_appointment, null));
 
 
         LeftSideDrawableListAdapter leftSideDrawableListAdapter = new LeftSideDrawableListAdapter(itemData, getActivity());
@@ -45,16 +45,7 @@ public class SearchAppointmentMainFragment extends Fragment {
         leftSideDrawableListAdapter.setOnItemClickListener(new LeftSideDrawableListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int position) {
-                String category = "doc";
-                System.out.println(position);
-                if(position == 0) {
-                    category = "doc";
-                }else if(position == 1)
-                {
-                    category = "den";
-                }
-                System.out.println(category);
-
+                String category = "den";
                 if (getActivity().getSupportFragmentManager() != null) {
                     FragmentManager fm = getActivity().getSupportFragmentManager();
                     fm.beginTransaction().replace(R.id.appointment_fragment_placeholder, DoctorSpecialityFragment.newInstance(category))
