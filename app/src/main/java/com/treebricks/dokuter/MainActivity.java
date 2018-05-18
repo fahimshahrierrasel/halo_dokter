@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.addItem(item1);
         bottomNavigation.addItem(item2);
         bottomNavigation.addItem(item3);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle("");
         // Set listeners
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override

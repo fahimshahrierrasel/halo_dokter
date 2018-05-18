@@ -43,9 +43,10 @@ public class HomeFragment extends Fragment {
             appCompatActivity.setSupportActionBar(toolbar);
         }
 
-        if (toolbar != null) {
-            toolbar.setTitle("Home");
-        }
+//        if (toolbar != null) {
+//            toolbar.setTitle("Home");
+//        }
+
         initList(view);
         return view;
     }
