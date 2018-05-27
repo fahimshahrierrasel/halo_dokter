@@ -219,18 +219,6 @@ public class LoginScreen extends AppCompatActivity {
             user.setPassword(password);
         }
 
-        //model class integration
-        /*Student std = new Student();
-        std.setUsername(etUserName.getText().toString().trim());
-        std.setPassword(etPassword.getText().toString());
-        std.setCgpa(Float.parseFloat(eTCgpa.getText().toString()));
-        std.setPhoneno(eTPhoneno.getText().toString().trim());*/
-
-        //get value from ui
-        /*String username = etUserName.getText().toString().trim();
-        String password = etPassword.getText().toString();
-        Float cgpa = Float.parseFloat(eTCgpa.getText().toString());
-        String phoneno = eTPhoneno.getText().toString().trim();*/
         if (error) {
             Toast.makeText(LoginScreen.this, "Data not saved", Toast.LENGTH_LONG).show();
         } else {
