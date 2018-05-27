@@ -1,10 +1,12 @@
 package com.treebricks.dokuter;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -15,6 +17,7 @@ import com.treebricks.dokuter.adapters.ViewPagerAdapter;
 import com.treebricks.dokuter.R;
 
 public class MainActivity extends AppCompatActivity {
+    boolean backToExitPressedOnce = false;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     Fragment currentFragment;
@@ -59,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.addItem(item1);
         bottomNavigation.addItem(item2);
         bottomNavigation.addItem(item3);
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setTitle("");
+
         // Set listeners
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
@@ -113,6 +115,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(backToExitPressedOnce) {
+            super.onBackPressed();
+            finish();
+        }
+
+        backToExitPressedOnce = true;
+        Toast.makeText(MainActivity.this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                backToExitPressedOnce = false;
+            }
+        }, 2000);
     }
 
     @Override

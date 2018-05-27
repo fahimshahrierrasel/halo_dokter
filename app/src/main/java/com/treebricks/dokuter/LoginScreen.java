@@ -316,7 +316,7 @@ public class LoginScreen extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            sharedPrefManager.setLoggedInStatus(false);
+                            sharedPrefManager.setLoggedInStatus(true);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.d(TAG, "signInWithCredential:Failure");
