@@ -55,7 +55,7 @@
                 android:id="@+id/phoneno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_phone24dp"
+                android:drawableLeft="@drawable/ic_phone_white_24dp"
                 android:drawablePadding="16dp"
                 android:hint="Phone No"
                 android:inputType="number"

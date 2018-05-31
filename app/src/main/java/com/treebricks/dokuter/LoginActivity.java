@@ -4,14 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -25,7 +21,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,53 +31,20 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.treebricks.dokuter.models.User;
 import com.treebricks.dokuter.utils.SharedPrefManager;
 
 public class LoginActivity extends AppCompatActivity {
 
-    //edit text login criteria
-    EditText etUserName, etPassword;
     private String TAG = "Authentication";
 
     private FirebaseAuth mAuth;
     public final static int RC_SIGN_IN = 2;
     private GoogleApiClient mGoogleApiClient;
     FirebaseAuth.AuthStateListener mAuthListener;
-    Button loginbtn;
     SharedPrefManager sharedPrefManager;
 
     //facebook
     private CallbackManager mCallbackManager;
-
-    //with input disable the button
-    private TextWatcher mTextWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-            // check Fields For Empty Values
-            checkFieldsForEmptyValues();
-        }
-    };
-
-    //edit text login criteria
-    void checkFieldsForEmptyValues() {
-        loginbtn = findViewById(R.id.btn_login);
-        String s1 = etUserName.getText().toString();
-        String s2 = etPassword.getText().toString();
-        if (s1.equals("") || s2.equals("")) {
-            loginbtn.setEnabled(false);
-        } else {
-            loginbtn.setEnabled(true);
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,17 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         sharedPrefManager = new SharedPrefManager(LoginActivity.this);
 
-        etUserName = findViewById(R.id.et_username);
-        etPassword = findViewById(R.id.et_password);
-
-        // set listeners
-        etUserName.addTextChangedListener(mTextWatcher);
-        etPassword.addTextChangedListener(mTextWatcher);
-
-        // run once to disable if empty
-        checkFieldsForEmptyValues();
-
-        SignInButton bGoogleSignIn = findViewById(R.id.google_sign_in_button);
+        Button bGoogleSignIn = findViewById(R.id.google_sign_in_button_wrapper);
         mAuth = FirebaseAuth.getInstance();
 
         // redirect to another activity
@@ -192,52 +144,6 @@ public class LoginActivity extends AppCompatActivity {
                         // App code
                     }
                 });
-    }
-
-    public void saveData(View view) {
-        boolean error = false;
-        User user = new User();
-        String username = etUserName.getText().toString().trim();
-
-        if (username.isEmpty()) {
-            error = true;
-            etUserName.setError("User Name is empty!");
-        } else {
-            if (username.length() < 6) {
-                error = true;
-                etUserName.setError("UserName is too short!");
-            } else {
-                user.setUsername(username);
-            }
-        }
-
-        String password = etPassword.getText().toString();
-
-        if (password.isEmpty()) {
-            error = true;
-            etPassword.setError("Password is empty!");
-        } else {
-            user.setPassword(password);
-        }
-
-        if (error) {
-            Toast.makeText(LoginActivity.this, "Data not saved", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(LoginActivity.this, user.toString(), Toast.LENGTH_LONG).show();
-        }
-
-    }
-
-    //clear the entered data
-    public void clearData(View view) {
-        etUserName.setText(null);
-        etPassword.setText(null);
-    }
-
-    //Called when the user taps the Send button
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, RegistrationActivity.class);
-        startActivity(intent);
     }
 
     @Override
