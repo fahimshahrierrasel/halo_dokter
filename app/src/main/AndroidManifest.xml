@@ -45,7 +45,7 @@
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppThemeNoActionBar" />
 
-        <activity android:name="com.treebricks.dokuter.UserRegistration"
+        <activity android:name="com.treebricks.dokuter.RegistrationActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity

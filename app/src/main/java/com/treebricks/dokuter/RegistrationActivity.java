@@ -6,18 +6,13 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-
-import com.treebricks.dokuter.R;
-import com.treebricks.dokuter.models.User;
 
 import java.util.Calendar;
 import java.util.Locale;
 
-public class UserRegistration extends AppCompatActivity implements View.OnClickListener {
+public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener {
     EditText birthdate;
 
     @Override
@@ -53,7 +48,7 @@ public class UserRegistration extends AppCompatActivity implements View.OnClickL
         int month = c.get(Calendar.MONTH);
         int year = c.get(Calendar.YEAR);
 
-        DatePickerDialog datePickerDialog = new DatePickerDialog(UserRegistration.this, new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(RegistrationActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 String date = String.format(Locale.US, "%d/%02d/%d", dayOfMonth, month + 1, year);
