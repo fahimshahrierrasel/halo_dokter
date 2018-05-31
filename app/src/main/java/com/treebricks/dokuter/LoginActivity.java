@@ -37,6 +37,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.treebricks.dokuter.models.User;
+import com.treebricks.dokuter.utils.SharedPrefManager;
 
 public class LoginActivity extends AppCompatActivity {
 

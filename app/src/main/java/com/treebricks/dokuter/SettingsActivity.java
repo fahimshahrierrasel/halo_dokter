@@ -12,6 +12,7 @@ import android.os.Bundle;
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.treebricks.dokuter.utils.SharedPrefManager;
 
 public class SettingsActivity extends AppCompatActivity {
 
