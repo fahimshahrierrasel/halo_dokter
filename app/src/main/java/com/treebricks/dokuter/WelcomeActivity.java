@@ -37,7 +37,7 @@ public class WelcomeActivity extends AppIntro2 {
 
     private void loaLoginActivity() {
         sharedPrefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(this, LoginScreen.class));
+        startActivity(new Intent(this, LoginActivity.class));
         finish();
     }
 

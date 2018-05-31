@@ -14,7 +14,6 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.treebricks.dokuter.adapters.ViewPagerAdapter;
-import com.treebricks.dokuter.R;
 
 public class MainActivity extends AppCompatActivity {
     boolean backToExitPressedOnce = false;
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if (user == null) {
-                    startActivity(new Intent(MainActivity.this, LoginScreen.class));
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 }
             }
         };

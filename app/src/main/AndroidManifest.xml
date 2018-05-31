@@ -38,7 +38,7 @@
             android:name="com.treebricks.dokuter.WelcomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name="com.treebricks.dokuter.LoginScreen"
+            android:name="com.treebricks.dokuter.LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="com.treebricks.dokuter.MainActivity"

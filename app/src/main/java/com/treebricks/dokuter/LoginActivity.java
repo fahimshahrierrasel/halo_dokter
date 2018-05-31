@@ -38,7 +38,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.treebricks.dokuter.models.User;
 
-public class LoginScreen extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     //edit text login criteria
     EditText etUserName, etPassword;
@@ -91,7 +91,7 @@ public class LoginScreen extends AppCompatActivity {
         // Making notification bar transparent
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        sharedPrefManager = new SharedPrefManager(LoginScreen.this);
+        sharedPrefManager = new SharedPrefManager(LoginActivity.this);
 
         etUserName = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
@@ -117,7 +117,7 @@ public class LoginScreen extends AppCompatActivity {
                     Log.d(TAG, "Facebook not Logged In");
                 }
                 if (firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(LoginScreen.this, MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     Log.d(TAG, "onAuthStateChanged: User Found Redirect to MainActivity");
                 } else {
                     Log.d(TAG, "onAuthStateChanged: User Not Found !!");
@@ -220,9 +220,9 @@ public class LoginScreen extends AppCompatActivity {
         }
 
         if (error) {
-            Toast.makeText(LoginScreen.this, "Data not saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "Data not saved", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(LoginScreen.this, user.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, user.toString(), Toast.LENGTH_LONG).show();
         }
 
     }

@@ -44,7 +44,7 @@ public class SettingsActivity extends AppCompatActivity {
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                     FirebaseUser user = mAuth.getCurrentUser();
                     if (user == null) {
-                        startActivity(new Intent(getActivity(), LoginScreen.class));
+                        startActivity(new Intent(getActivity(), LoginActivity.class));
                         sharedPrefManager.setLoggedInStatus(false);
                     }
                 }
@@ -57,7 +57,7 @@ public class SettingsActivity extends AppCompatActivity {
                     mAuth.signOut();
                     LoginManager.getInstance().logOut();
                     sharedPrefManager.setLoggedInStatus(false);
-                    startActivity(new Intent(getActivity(), LoginScreen.class));
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
 
                     getActivity().finish();
                     return true;
