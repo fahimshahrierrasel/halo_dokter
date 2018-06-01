@@ -7,64 +7,61 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name="com.treebricks.dokuter.DokuterApplication"
+        android:name=".DokuterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true">
-
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/map_api_key"/>
+            android:value="@string/map_api_key" />
 
         <activity
-            android:name="com.treebricks.dokuter.SplashScreen"
+            android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.treebricks.dokuter.WelcomeActivity"
+            android:name=".WelcomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name="com.treebricks.dokuter.LoginScreen"
+            android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name="com.treebricks.dokuter.MainActivity"
+            android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppThemeNoActionBar" />
-
-        <activity android:name="com.treebricks.dokuter.UserRegistration"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-
+        <activity
+            android:name=".RegistrationActivity"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-        <activity android:name="com.treebricks.dokuter.DoctorAppointmentActivity" />
+        <activity android:name=".DoctorAppointmentActivity" />
         <activity
-            android:name="com.treebricks.dokuter.SettingsActivity"
+            android:name=".SettingsActivity"
             android:theme="@style/AppThemeActionBar" />
         <activity
-            android:name="com.treebricks.dokuter.SearchAppointment"
+            android:name=".SearchAppointment"
             android:theme="@style/AppThemeNoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.treebricks.dokuter.MainActivity" />
         </activity>
         <activity
-            android:name="com.treebricks.dokuter.FAQActivity"
+            android:name=".FAQActivity"
             android:label="@string/faq_activity_label"
             android:theme="@style/AppThemeActionBar">
             <meta-data
@@ -72,8 +69,10 @@
                 android:value="com.treebricks.dokuter.MainActivity" />
         </activity>
         <activity
-            android:name="com.treebricks.dokuter.DoctorsListActivity"
+            android:name=".DoctorsListActivity"
             android:theme="@style/AppThemeNoActionBar" />
+        <activity android:name=".EmailLoginActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
     </application>
 
 </manifest>

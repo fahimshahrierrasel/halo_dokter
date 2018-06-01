@@ -58,6 +58,13 @@
     <string name="doctor_background_image">Doctor Background Image</string>
     <string name="services">Hypertension Treatment \nChronic Disease \nDiabetes Management</string>
     <string name="specialization">General Physician \nFamily Physician \nCardiologist</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="enter_your_mobile_number">Enter your mobile number</string>
+    <string name="login_using_email">Login using old ways</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="phone_no">Phone No</string>
 
     <string-array name="consultation_array">
         <item>Follow Up</item>

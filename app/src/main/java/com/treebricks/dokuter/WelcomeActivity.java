@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.AppIntro2Fragment;
+import com.treebricks.dokuter.utils.SharedPrefManager;
 
 public class WelcomeActivity extends AppIntro2 {
     private SharedPrefManager sharedPrefManager;
@@ -37,7 +38,7 @@ public class WelcomeActivity extends AppIntro2 {
 
     private void loaLoginActivity() {
         sharedPrefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(this, LoginScreen.class));
+        startActivity(new Intent(this, LoginActivity.class));
         finish();
     }
 

@@ -27,7 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.UserInfo;
 import com.treebricks.dokuter.GlideApp;
-import com.treebricks.dokuter.LoginScreen;
+import com.treebricks.dokuter.LoginActivity;
 import com.treebricks.dokuter.R;
 import com.treebricks.dokuter.SettingsActivity;
 import com.treebricks.dokuter.adapters.RightSideDrawableNoDescListAdapter;
@@ -66,7 +66,7 @@ public class ProfileFragment extends Fragment {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if (user == null) {
-                    startActivity(new Intent(getActivity(), LoginScreen.class));
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
                 }
             }
         };

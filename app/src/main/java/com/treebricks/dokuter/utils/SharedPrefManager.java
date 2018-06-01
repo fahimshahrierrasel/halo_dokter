@@ -1,4 +1,4 @@
-package com.treebricks.dokuter;
+package com.treebricks.dokuter.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,7 +17,7 @@ public class SharedPrefManager {
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     private static final String IS_LOGGED_ID = "IsLoggedIn";
 
-    SharedPrefManager(Context context) {
+    public SharedPrefManager(Context context) {
         pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         editor = pref.edit();
         editor.apply();

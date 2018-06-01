@@ -9,6 +9,8 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
+import com.treebricks.dokuter.utils.SharedPrefManager;
+
 public class SplashScreen extends AppCompatActivity {
     SharedPrefManager sharedPrefManager;
     @Override
