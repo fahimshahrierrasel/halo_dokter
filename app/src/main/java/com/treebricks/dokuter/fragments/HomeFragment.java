@@ -1,5 +1,6 @@
 package com.treebricks.dokuter.fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.request.RequestOptions;
+import com.glide.slider.library.Animations.DescriptionAnimation;
+import com.glide.slider.library.SliderLayout;
+import com.glide.slider.library.SliderTypes.DefaultSliderView;
+import com.glide.slider.library.SliderTypes.TextSliderView;
 import com.treebricks.dokuter.FAQActivity;
 import com.treebricks.dokuter.SearchAppointment;
 import com.treebricks.dokuter.adapters.TwoSideDrawableListAdapter;
@@ -22,6 +28,7 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
+    private SliderLayout mDemoSlider;
 
     public static HomeFragment newInstance(int index) {
         HomeFragment homeFragment = new HomeFragment();
@@ -35,7 +42,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_with_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();
 
@@ -46,6 +53,46 @@ public class HomeFragment extends Fragment {
 //        if (toolbar != null) {
 //            toolbar.setTitle("Home");
 //        }
+
+
+        mDemoSlider = view.findViewById(R.id.slider);
+
+        ArrayList<String> listUrl = new ArrayList<>();
+
+        listUrl.add("https://www.revive-adserver.com/media/GitHub.jpg");
+        listUrl.add("https://tctechcrunch2011.files.wordpress.com/2017/02/android-studio-logo.png");
+        //RequestOptions requestOptions = new RequestOptions();
+        //requestOptions.centerCrop();
+        //.diskCacheStrategy(DiskCacheStrategy.NONE)
+        //.placeholder(R.drawable.placeholder)
+        //.error(R.drawable.placeholder);
+
+        for (int i = 0; i < listUrl.size(); i++) {
+            DefaultSliderView sliderView = new DefaultSliderView(getContext());
+            // if you want show image only / without description text use DefaultSliderView instead
+
+            // initialize SliderLayout
+            sliderView
+                    .image(listUrl.get(i))
+                    .setRequestOption(RequestOptions.centerCropTransform())
+                    .setBackgroundColor(Color.WHITE)
+                    .setProgressBarVisible(true);
+
+            //add your extra information
+            //sliderView.bundle(new Bundle());
+            //sliderView.getBundle().putString("extra", listName.get(i));
+            mDemoSlider.addSlider(sliderView);
+        }
+
+        // set Slider Transition Animation
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Default);
+        //mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+
+        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
+        mDemoSlider.setDuration(4000);
+
+
 
         initList(view);
         return view;
@@ -63,5 +110,11 @@ public class HomeFragment extends Fragment {
 
         TwoSideDrawableListAdapter twoSideDrawableListAdapter = new TwoSideDrawableListAdapter(itemData, getContext());
         recyclerView.setAdapter(twoSideDrawableListAdapter);
+    }
+
+    @Override
+    public void onStop() {
+        mDemoSlider.stopAutoCycle();
+        super.onStop();
     }
 }

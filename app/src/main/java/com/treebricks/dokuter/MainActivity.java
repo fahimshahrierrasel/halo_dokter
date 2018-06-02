@@ -71,15 +71,6 @@ public class MainActivity extends AppCompatActivity {
                     currentFragment = viewPagerAdapter.getCurrentFragment();
                 }
 
-//                if (wasSelected) {
-//                    currentFragment.refresh();
-//                    return true;
-//                }
-
-//                if (currentFragment != null) {
-//                    currentFragment.willBeHidden();
-//                }
-
                 bottomNavigationViewPager.setCurrentItem(position, false);
 
                 if (currentFragment == null) {
@@ -87,24 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 currentFragment = viewPagerAdapter.getCurrentFragment();
-                //currentFragment.willBeDisplayed();
-//                switch (position)
-//                {
-//                    case 0:
-//                        if(getSupportActionBar() != null)
-//                            getSupportActionBar().setTitle("Home");
-//                        break;
-//                    case 1:
-//                        if(getSupportActionBar() != null)
-//                            getSupportActionBar().setTitle("Your List");
-//                        break;
-//                    case 2:
-//                        if(getSupportActionBar() != null)
-//                            getSupportActionBar().setTitle(mAuth.getCurrentUser().getDisplayName());
-//                        break;
-//                    default:
-//                        break;
-//                }
                 return true;
             }
         });
@@ -112,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPositionChange(int y) {
                 // Manage the new y position
-
             }
         });
     }
