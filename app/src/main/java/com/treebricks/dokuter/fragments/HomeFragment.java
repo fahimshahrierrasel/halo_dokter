@@ -17,7 +17,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.glide.slider.library.Animations.DescriptionAnimation;
 import com.glide.slider.library.SliderLayout;
 import com.glide.slider.library.SliderTypes.DefaultSliderView;
-import com.glide.slider.library.SliderTypes.TextSliderView;
 import com.treebricks.dokuter.FAQActivity;
 import com.treebricks.dokuter.SearchAppointment;
 import com.treebricks.dokuter.adapters.TwoSideDrawableListAdapter;
