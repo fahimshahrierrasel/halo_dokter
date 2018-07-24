@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.treebricks.dokuter"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 27
         versionCode 2
         versionName "0.040 alpha"
@@ -28,29 +28,55 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
+    // Google Support Libraries
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:customtabs:27.1.1'
     implementation 'com.android.support:support-compat:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:cardview-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    // Play Services and Firebase Libraries
     implementation 'com.google.firebase:firebase-auth:16.0.2'
-    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
     implementation 'com.facebook.android:facebook-login:4.31.0'
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+
+    // Bottom Navigation
     implementation 'com.aurelhubert:ahbottomnavigation:2.2.0'
+
+    // Circle ImageView
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    // Image Loading and Caching
     implementation 'com.github.bumptech.glide:glide:4.7.1'
+
+    // Adapter Libraries
     implementation 'com.mikepenz:fastadapter:3.2.7'
+
+    // Application Intro
     implementation 'com.github.apl-devs:appintro:v4.2.3'
+
+    // Typefaces and Icon
     implementation "com.mikepenz:iconics-core:3.0.4@aar"
     implementation "com.mikepenz:iconics-views:3.0.3@aar"
     implementation 'com.mikepenz:community-material-typeface:2.0.46.1@aar'
-    implementation 'com.github.apl-devs:appintro:v4.2.3'
-    implementation 'com.google.android.gms:play-services-maps:15.0.0'
-    implementation "com.github.firdausmaulan:GlideSlider:1.3.1"
-    implementation "com.squareup.retrofit2:retrofit:2.4.0"
 
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+    // Slider
+    implementation "com.github.firdausmaulan:GlideSlider:1.3.1"
+
+    // Restful HTTP Client Libraries
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+
+    // Annotation Processors
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+
+    // Android Useful Classes
+    implementation 'com.blankj:utilcode:1.17.3'
+
+    // Android Testing Libraries
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

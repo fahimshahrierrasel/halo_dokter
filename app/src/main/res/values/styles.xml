@@ -39,4 +39,13 @@
         <item name="android:textColorHint">@color/md_white_1000</item>
     </style>
 
+    <style name="GreenTheme" parent="FirebaseUI">
+        <!-- Required for sign-in flow styling -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
 </resources>

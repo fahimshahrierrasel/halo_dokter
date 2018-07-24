@@ -21,12 +21,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.glide.slider.library.svg.GlideApp;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.UserInfo;
-import com.treebricks.dokuter.GlideApp;
 import com.treebricks.dokuter.LoginActivity;
 import com.treebricks.dokuter.R;
 import com.treebricks.dokuter.SettingsActivity;
