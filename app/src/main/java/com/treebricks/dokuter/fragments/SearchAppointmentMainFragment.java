@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.treebricks.dokuter.adapters.LeftSideDrawableListAdapter;
 import com.treebricks.dokuter.R;
-import com.treebricks.dokuter.models.RecyclerItem;
+import com.treebricks.dokuter.items.RecyclerItem;
 
 import java.util.ArrayList;
 

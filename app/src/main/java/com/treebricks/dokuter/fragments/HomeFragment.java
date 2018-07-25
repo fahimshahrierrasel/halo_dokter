@@ -21,7 +21,7 @@ import com.treebricks.dokuter.FAQActivity;
 import com.treebricks.dokuter.SearchAppointment;
 import com.treebricks.dokuter.adapters.TwoSideDrawableListAdapter;
 import com.treebricks.dokuter.R;
-import com.treebricks.dokuter.models.RecyclerItem;
+import com.treebricks.dokuter.items.RecyclerItem;
 
 import java.util.ArrayList;
 

@@ -31,7 +31,7 @@ import com.treebricks.dokuter.LoginActivity;
 import com.treebricks.dokuter.R;
 import com.treebricks.dokuter.SettingsActivity;
 import com.treebricks.dokuter.adapters.RightSideDrawableNoDescListAdapter;
-import com.treebricks.dokuter.models.RecyclerItem;
+import com.treebricks.dokuter.items.RecyclerItem;
 
 import java.util.ArrayList;
 

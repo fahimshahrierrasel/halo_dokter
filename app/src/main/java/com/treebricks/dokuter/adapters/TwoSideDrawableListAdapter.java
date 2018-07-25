@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.treebricks.dokuter.R;
-import com.treebricks.dokuter.models.RecyclerItem;
+import com.treebricks.dokuter.items.RecyclerItem;
 
 import java.util.ArrayList;
 

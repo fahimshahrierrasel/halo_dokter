@@ -1,4 +1,4 @@
-package com.treebricks.dokuter.models;
+package com.treebricks.dokuter.items;
 
 public class DetailsListItem extends RecyclerItem {
     private String buttonText;

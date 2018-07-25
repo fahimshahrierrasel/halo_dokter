@@ -8,12 +8,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.treebricks.dokuter.utils.SharedPrefManager;
+import com.treebricks.dokuter.utils.AppPreferenceManager;
 
 public class SplashScreen extends AppCompatActivity {
-    SharedPrefManager sharedPrefManager;
+    AppPreferenceManager appPreferenceManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +31,14 @@ public class SplashScreen extends AppCompatActivity {
         animationchef.setFillAfter(true);
         imageViewChef.startAnimation(animationchef);  // start animation
 
-        sharedPrefManager = new SharedPrefManager(SplashScreen.this);
+        appPreferenceManager = new AppPreferenceManager(SplashScreen.this);
 
         Thread timer = new Thread(){
             public void run(){
                 try{
                     sleep(3000);
                     Intent intent;
-                    if(sharedPrefManager.isLoggedIn()) {
+                    if(appPreferenceManager.isLoggedIn()) {
                         intent = new Intent(getApplicationContext(), MainActivity.class);
                     }else{
                         intent = new Intent(getApplicationContext(),WelcomeActivity.class);

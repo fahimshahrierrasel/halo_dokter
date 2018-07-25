@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.treebricks.dokuter.R;
-import com.treebricks.dokuter.models.DetailsListItem;
+import com.treebricks.dokuter.items.DetailsListItem;
 
 import java.util.ArrayList;
 

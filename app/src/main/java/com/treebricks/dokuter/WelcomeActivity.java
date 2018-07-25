@@ -6,18 +6,18 @@ import android.support.v4.app.Fragment;
 
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.AppIntro2Fragment;
-import com.treebricks.dokuter.utils.SharedPrefManager;
+import com.treebricks.dokuter.utils.AppPreferenceManager;
 
 public class WelcomeActivity extends AppIntro2 {
-    private SharedPrefManager sharedPrefManager;
+    private AppPreferenceManager appPreferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Checking for first time launch - before calling setContentView()
-        sharedPrefManager = new SharedPrefManager(this);
-        if (!sharedPrefManager.isFirstTimeLaunch()) {
+        appPreferenceManager = new AppPreferenceManager(this);
+        if (!appPreferenceManager.isFirstTimeLaunch()) {
             loaLoginActivity();
             finish();
         }
@@ -37,7 +37,7 @@ public class WelcomeActivity extends AppIntro2 {
     }
 
     private void loaLoginActivity() {
-        sharedPrefManager.setFirstTimeLaunch(false);
+        appPreferenceManager.setFirstTimeLaunch(false);
         startActivity(new Intent(this, LoginActivity.class));
         finish();
     }

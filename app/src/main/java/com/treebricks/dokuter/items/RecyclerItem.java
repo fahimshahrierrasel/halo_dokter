@@ -1,4 +1,4 @@
-package com.treebricks.dokuter.models;
+package com.treebricks.dokuter.items;
 
 public class RecyclerItem {
     private String itemTitle;
