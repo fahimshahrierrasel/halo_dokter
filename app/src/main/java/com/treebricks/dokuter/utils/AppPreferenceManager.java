@@ -16,7 +16,7 @@ public class AppPreferenceManager {
     private static final String PREF_NAME = "dokuter";
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     private static final String IS_LOGGED_ID = "IsLoggedIn";
-    private static final String PATIENT_UID = "IsLoggedIn";
+    private static final String PATIENT_UID = "PatientUID";
 
     public AppPreferenceManager(Context context) {
         pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
