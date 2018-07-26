@@ -78,4 +78,8 @@
         <item>05:30 AM - 9:00 PM</item>
     </string-array>
 
+    <string-array name="profiles">
+        <item>My Self</item>
+    </string-array>
+
 </resources>

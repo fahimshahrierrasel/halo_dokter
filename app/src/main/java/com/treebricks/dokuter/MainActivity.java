@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 if (statusCode == 200) {
                     Patient patient = response.body();
                     if (patient != null) {
-                        appPreferenceManager.setPatientUID(patient.getPatientUUID());
+                        savePatientInfoToPreference(patient);
                     }
                 }
             }
@@ -155,8 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 if (statusCode == 201) {
                     Patient patient = response.body();
                     if (patient != null) {
-                        LogUtils.d("New Patient: " + patient.toString());
-                        appPreferenceManager.setPatientUID(patient.getPatientUUID());
+                        savePatientInfoToPreference(patient);
                     }
                 }
             }
@@ -168,6 +167,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void savePatientInfoToPreference(Patient patient) {
+        appPreferenceManager.setPatientUID(patient.getPatientUUID());
+        appPreferenceManager.setPatientId(patient.getId());
     }
 
     @Override
