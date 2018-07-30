@@ -1,7 +1,9 @@
 package com.treebricks.dokuter.api;
 
 import com.treebricks.dokuter.models.Patient;
+import com.treebricks.dokuter.models.Question;
 
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -16,9 +18,9 @@ public interface QuestionService {
     @FormUrlEncoded
     Call<String> saveQuestion(@FieldMap Map<String, String> fields);
 
-    @GET("/api/questions/{uid}")
-    Call<Patient> getQuestions(@Path("id") String uid);
+    @GET("/api/questions/{pid}") // pid is the patient/user id
+    Call<List<Question>> getMyQuestions(@Path("pid") String uid);
 
     @GET("/api/question/{id}")
-    Call<Patient> getSingleQuestion(@Path("id") String id);
+    Call<Question> getSingleQuestion(@Path("id") String id);
 }

@@ -28,6 +28,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.UserInfo;
 import com.treebricks.dokuter.LoginActivity;
+import com.treebricks.dokuter.QAActivity;
 import com.treebricks.dokuter.R;
 import com.treebricks.dokuter.SettingsActivity;
 import com.treebricks.dokuter.adapters.RightSideDrawableNoDescListAdapter;
@@ -132,15 +133,15 @@ public class ProfileFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         ArrayList<RecyclerItem> itemData = new ArrayList<>();
-        itemData.add(new RecyclerItem("My doctors", " ", 0, null));
+//        itemData.add(new RecyclerItem("My doctors", " ", 0, null));
         itemData.add(new RecyclerItem("Appointments", " ", 0, null));
-        itemData.add(new RecyclerItem("Online consultations", " ", 0, null));
-        itemData.add(new RecyclerItem("Medical records", " ", 0, null));
-        itemData.add(new RecyclerItem("Orders", " ", 0, null));
-        itemData.add(new RecyclerItem("Reminders", " ", 0, null));
-        itemData.add(new RecyclerItem("Bookmarked articles", " ", 0, null));
-        itemData.add(new RecyclerItem("Health interests", " ", 0, null));
-        itemData.add(new RecyclerItem("My payments", " ", 0, null));
+        itemData.add(new RecyclerItem("Online Consultations", " ", 0, QAActivity.class));
+//        itemData.add(new RecyclerItem("Medical records", " ", 0, null));
+//        itemData.add(new RecyclerItem("Orders", " ", 0, null));
+//        itemData.add(new RecyclerItem("Reminders", " ", 0, null));
+//        itemData.add(new RecyclerItem("Bookmarked articles", " ", 0, null));
+//        itemData.add(new RecyclerItem("Health interests", " ", 0, null));
+//        itemData.add(new RecyclerItem("My payments", " ", 0, null));
 
         RightSideDrawableNoDescListAdapter rightSideDrawableNoDescListAdapter = new RightSideDrawableNoDescListAdapter(itemData, getContext());
         recyclerView.setAdapter(rightSideDrawableNoDescListAdapter);
