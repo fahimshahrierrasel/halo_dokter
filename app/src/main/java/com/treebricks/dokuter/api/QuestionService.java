@@ -1,7 +1,8 @@
 package com.treebricks.dokuter.api;
 
-import com.treebricks.dokuter.models.Patient;
+import com.treebricks.dokuter.models.Answer;
 import com.treebricks.dokuter.models.Question;
+import com.treebricks.dokuter.models.QuestionDetails;
 
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,9 @@ public interface QuestionService {
     @GET("/api/questions/{pid}") // pid is the patient/user id
     Call<List<Question>> getMyQuestions(@Path("pid") String uid);
 
-    @GET("/api/question/{id}")
-    Call<Question> getSingleQuestion(@Path("id") String id);
+    @GET("/api/question/{qid}")  // qid is the question id
+    Call<QuestionDetails> getQuestionDetails(@Path("qid") int qid);
+
+    @GET("/api/answers/{qid}") // qid is the question id
+    Call<List<Answer>> getQuestionAnswers(@Path("qid") int qid);
 }

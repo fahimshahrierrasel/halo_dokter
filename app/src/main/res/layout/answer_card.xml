@@ -22,7 +22,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Question Title" />
+            tools:text="@tools:sample/full_names" />
 
         <TextView
             android:id="@+id/tv_doc_edu"
@@ -33,11 +33,20 @@
             tools:text="Question Type" />
 
         <TextView
-            android:id="@+id/tv_question_date"
+            android:id="@+id/tv_ans_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_doc_name"
             tools:text="@sample/tools:date/ddmmyy" />
+
+        <TextView
+            android:id="@+id/tv_ans_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_doc_edu"
+            tools:text="Question Type" />
+
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

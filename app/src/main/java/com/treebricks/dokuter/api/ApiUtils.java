@@ -1,7 +1,12 @@
 package com.treebricks.dokuter.api;
 
+import android.content.res.Resources;
+
+import com.treebricks.dokuter.DokuterApplication;
+import com.treebricks.dokuter.R;
+
 public class ApiUtils {
-    private static final String BASE_URL = "http://192.168.0.5:8000/";
+    private static final String BASE_URL = DokuterApplication.getResourses().getString(R.string.dokuter_root);
 
     private ApiUtils() {}
 

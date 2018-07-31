@@ -51,8 +51,8 @@ public class QuestionItem extends AbstractItem<QuestionItem, QuestionItem.ViewHo
 
         ViewHolder(View view) {
             super(view);
-            tvQuestionTitle = view.findViewById(R.id.tv_question_title);
-            tvQuestionType = view.findViewById(R.id.tv_question_type);
+            tvQuestionTitle = view.findViewById(R.id.tv_doc_name);
+            tvQuestionType = view.findViewById(R.id.tv_doc_edu);
             tvQuestionDate = view.findViewById(R.id.tv_question_date);
         }
 

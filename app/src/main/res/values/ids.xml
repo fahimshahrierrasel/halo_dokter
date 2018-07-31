@@ -2,4 +2,5 @@
 <resources>
     <item name="doctor_list_item_id" type="id"/>
     <item name="question_list_item_id" type="id"/>
+    <item name="answer_list_item_id" type="id"/>
 </resources>

@@ -81,5 +81,8 @@
     <string-array name="profiles">
         <item>My Self</item>
     </string-array>
+    
+    <string name="doc_exp">Experience: %1$s</string>
+    <string name="doc_image_link">/images/profile_pics/%1$s</string>
 
 </resources>

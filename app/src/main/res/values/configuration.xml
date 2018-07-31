@@ -5,4 +5,5 @@
     <string name="fb_login_protocol_scheme">fb155811945261263</string>
     <string name="web_client_id">965846737601-d6nj51ig40qaftcbdn7ul3vj1baalfi2.apps.googleusercontent.com</string>
     <string name="map_api_key">AIzaSyDfHFKQIxO0Q52ZjrN6Zx3RMMUru24yCz4</string>
+    <string name="dokuter_root">http://192.168.0.4:8000</string>
 </resources>
